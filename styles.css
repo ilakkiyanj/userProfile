@@ -1,38 +1,35 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
 }
 
 header {
     background-color: #333;
     color: white;
-    padding: 10px 20px;
-    text-align: center;
+    padding: 0; /* Ensure there's no padding around the header */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-nav {
-    margin-top: 10px;
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #444;
+    padding: 10px 0;
 }
 
 .nav-btn {
-    background-color: #444;
+    flex: 1;
+    background-color: #666;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 0;
     cursor: pointer;
-    margin-right: 5px;
     font-size: 16px;
+    text-align: center;
 }
 
 .nav-btn.active {
-    background-color: #666;
+    background-color: #333;
 }
 
 .content-section {
@@ -77,8 +74,50 @@ button {
 }
 
 button.add-allergy, 
-button.add-data {
+button.add-data,
+button.search-btn {
     margin-bottom: 20px;
+}
+
+button.cancel-allergy, 
+button.close-data {
+    background-color: #cc0000;
+}
+
+button.search-btn {
+    margin-left: 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="search"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #444;
+    border-color: #444;
+}
+
+.search-bar button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .allergy-item {
@@ -92,12 +131,18 @@ button.add-data {
 }
 
 .allergy-item .allergy-details {
-    margin-top: 10px;
+    display: block; /* Stack elements vertically */
+    width: 100%;
 }
 
-button.edit-allergy, 
-button.delete-allergy {
+.allergy-item .allergy-details textarea {
+    width: 100%;
+    margin-bottom: 10px; /* Space between textarea and buttons */
+}
+
+.allergy-item .allergy-details button {
     margin-right: 10px;
+    width: 100px;
 }
 
 button.edit-allergy {
@@ -120,7 +165,7 @@ button.delete-allergy {
 @media (max-width: 600px) {
     .nav-btn {
         font-size: 14px;
-        padding: 8px 10px;
+        padding: 8px;
     }
 
     .content-section {
@@ -143,4 +188,27 @@ button.delete-allergy {
         font-size: 14px;
         padding: 8px 10px;
     }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar input[type="search"] {
+        margin-bottom: 10px;
+    }
+}
+
+/* Adjusting navbar button to match theme */
+.navbar .btn-outline-success {
+    border-color: #333;
+    color: #333;
+}
+
+.navbar .btn-outline-success:hover {
+    background-color: #333;
+    color: white;
+}
+
+.navbar .btn-outline-success:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }

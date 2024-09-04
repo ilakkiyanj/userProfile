@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+.nav-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.nav-btn.active {
+    background-color: #666;
+}
+
+.content-section {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 80px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.add-allergy, 
+button.add-data {
+    margin-bottom: 20px;
+}
+
+.allergy-item {
+    margin-bottom: 15px;
+}
+
+.allergy-item .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.allergy-item .allergy-details {
+    margin-top: 10px;
+}
+
+button.edit-allergy, 
+button.delete-allergy {
+    margin-right: 10px;
+}
+
+button.edit-allergy {
+    background-color: #0066cc;
+}
+
+button.delete-allergy {
+    background-color: #cc0000;
+}
+
+.history-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #333;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .nav-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .content-section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+}

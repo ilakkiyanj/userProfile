@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const addNewDataBtn = document.querySelector('.add-data');
     const newDataForm = document.getElementById('newDataForm');
     const medicalHistory = document.getElementById('medicalHistory');
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
 
+    // Toggle between personal details and medical data sections
     personalDetailsBtn.addEventListener('click', () => {
         personalDetailsSection.style.display = 'block';
         medicalDataSection.style.display = 'none';
@@ -43,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newAllergyDiv.classList.add('allergy-item');
         newAllergyDiv.innerHTML = `
             <div class="form-group">
-                <label>New Allergy Name</label>
+                <label>Allergy Name</label>
                 <input type="text" class="new-allergy-name" placeholder="Enter allergy name">
             </div>
             <div class="form-group">
@@ -73,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <textarea readonly>${allergyDetails}</textarea>
                         <button class="edit-allergy">Edit</button>
                         <button class="delete-allergy">Delete</button>
+                        <button class="cancel-allergy">Cancel</button>
                     </div>
                 `;
 
@@ -143,6 +147,20 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (e.target.classList.contains('delete-allergy')) {
             const allergyItem = e.target.closest('.allergy-item');
             allergyItem.remove();
+        } else if (e.target.classList.contains('cancel-allergy')) {
+            const allergyItem = e.target.closest('.allergy-item');
+            allergyItem.remove();
         }
+    });
+
+    // Search functionality
+    searchButton.addEventListener('click', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const historyItems = medicalHistory.getElementsByClassName('history-item');
+        
+        Array.from(historyItems).forEach(item => {
+            const text = item.textContent.toLowerCase();
+            item.style.display = text.includes(searchTerm) ? '' : 'none';
+        });
     });
 });
